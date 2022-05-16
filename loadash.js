@@ -49,7 +49,14 @@ let max = _.maxBy(members ,function(o){
 })
 // console.log(max);
 // 6 Divide persons in three groups
-    const grouped = _.groupBy(members , member => member.age > 35 )
+    const grouped = _.groupBy(members , member => 
+        if(member.age>35){
+            return "old"
+        }
+        else if (member.age < 35){
+            return 'young'
+        }
+        return "noage"; )
     console.log(grouped)
 
 // 7  add a new member to same members array instance at index 2
